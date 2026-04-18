@@ -1,162 +1,35 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { VinylRecord } from "@/components/vinyl-record"
-import { Countdown } from "@/components/countdown"
-import { 
-  getNextRecordStoreDay, 
-  isRecordStoreDay, 
-  getDaysUntilRecordStoreDay,
-  formatRecordStoreDay 
-} from "@/lib/record-store-day"
+import { useEffect } from "react"
+import { useRouter } from "next/navigation"
+import { DEFAULT_LOCALE, REGION_TO_LOCALE, SUPPORTED_LOCALES, type AppLocale } from "@/lib/i18n/config"
 
-export default function Home() {
-  const [mounted, setMounted] = useState(false)
-  const [isToday, setIsToday] = useState(false)
-  const [nextRSD, setNextRSD] = useState<Date>(new Date())
-  const [daysLeft, setDaysLeft] = useState(0)
+function pickLocale(languages: readonly string[]): AppLocale {
+  for (const languageTag of languages) {
+    const normalized = languageTag.toLowerCase().replace("_", "-")
+    const exact = SUPPORTED_LOCALES.find((locale) => locale.toLowerCase() === normalized)
+    if (exact) return exact
 
-  useEffect(() => {
-    setMounted(true)
-    setIsToday(isRecordStoreDay())
-    setNextRSD(getNextRecordStoreDay())
-    setDaysLeft(getDaysUntilRecordStoreDay())
-  }, [])
+    const baseLang = normalized.split("-")[0]
+    const baseMatch = SUPPORTED_LOCALES.find((locale) => locale.toLowerCase() === baseLang)
+    if (baseMatch) return baseMatch
 
-  if (!mounted) {
-    return (
-      <main className="min-h-screen flex items-center justify-center bg-background">
-        <div className="animate-pulse text-muted-foreground">Loading...</div>
-      </main>
-    )
+    const region = normalized.split("-")[1]?.toUpperCase()
+    if (region && REGION_TO_LOCALE[region]) {
+      return REGION_TO_LOCALE[region]
+    }
   }
 
-  return (
-    <main className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-8 overflow-hidden relative">
-      {/* Background noise texture */}
-      <div 
-        className="fixed inset-0 opacity-[0.015] pointer-events-none"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-        }}
-      />
-      
-      {/* Gradient orbs */}
-      <div className="fixed top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[128px] pointer-events-none" />
-      <div className="fixed bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-[128px] pointer-events-none" />
+  return DEFAULT_LOCALE
+}
 
-      {/* Content */}
-      <div className="relative z-10 flex flex-col items-center gap-8 sm:gap-12 max-w-4xl mx-auto text-center">
-        
-        {/* Logo / Title */}
-        <div className="space-y-2">
-          <h1 className="text-xs sm:text-sm font-mono tracking-[0.3em] text-muted-foreground uppercase">
-            recordstore.day
-          </h1>
-        </div>
+export default function IndexPage() {
+  const router = useRouter()
 
-        {/* Vinyl Record */}
-        <div className="w-48 sm:w-64 md:w-80">
-          <VinylRecord isToday={isToday} />
-        </div>
+  useEffect(() => {
+    const detected = pickLocale(navigator.languages)
+    router.replace(`/${detected}`)
+  }, [router])
 
-        {/* Main Message */}
-        <div className="space-y-4 sm:space-y-6">
-          {isToday ? (
-            <>
-              <div className="space-y-2">
-                <h2 
-                  className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-balance"
-                  style={{
-                    background: 'linear-gradient(135deg, #ff0066 0%, #ff6b00 50%, #ffcc00 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                  }}
-                >
-                  本日は
-                  <br />
-                  レコードストアデイ
-                </h2>
-              </div>
-              <p className="text-lg sm:text-xl text-muted-foreground max-w-md mx-auto text-balance">
-                今すぐお近くのレコードショップへ。
-                <br />
-                特別な一枚があなたを待っています。
-              </p>
-              
-              {/* Celebration particles */}
-              <div className="flex justify-center gap-2 pt-4">
-                {[...Array(5)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="w-2 h-2 rounded-full animate-bounce"
-                    style={{
-                      backgroundColor: ['#ff0066', '#ff6b00', '#ffcc00', '#00ff88', '#00ccff'][i],
-                      animationDelay: `${i * 0.1}s`,
-                    }}
-                  />
-                ))}
-              </div>
-            </>
-          ) : (
-            <>
-              <div className="space-y-4">
-                <p className="text-base sm:text-lg text-muted-foreground">
-                  次回のレコードストアデイまで
-                </p>
-                <h2 
-                  className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight"
-                  style={{
-                    background: 'linear-gradient(135deg, #ff0066 0%, #ff6b00 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                  }}
-                >
-                  あと {daysLeft} 日
-                </h2>
-              </div>
-              
-              {/* Countdown Timer */}
-              <Countdown targetDate={nextRSD} onToday={isToday} />
-              
-              {/* Next RSD Date */}
-              <p className="text-sm text-muted-foreground font-mono pt-4">
-                {formatRecordStoreDay(nextRSD)}
-              </p>
-            </>
-          )}
-        </div>
-
-        {/* Footer */}
-        <footer className="pt-8 sm:pt-16 space-y-4">
-          <div className="flex items-center justify-center gap-4 text-muted-foreground">
-            <div className="h-px w-12 bg-border" />
-            <span className="text-xs font-mono tracking-wider">♪</span>
-            <div className="h-px w-12 bg-border" />
-          </div>
-          <p className="text-xs text-muted-foreground/60 font-mono">
-            Support your local record store
-          </p>
-        </footer>
-      </div>
-
-      {/* Custom CSS for animations */}
-      <style jsx global>{`
-        @keyframes spin-slow {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
-        
-        .animate-spin-slow {
-          animation: spin-slow 3s linear infinite;
-        }
-      `}</style>
-    </main>
-  )
+  return null
 }

@@ -1,0 +1,35 @@
+{
+  "common": {
+    "loading": "Cargando...",
+    "siteWordmark": "recordstore.day",
+    "supportLocalStore": "Apoya a tu tienda de discos local",
+    "separatorMusic": "Separador musical"
+  },
+  "home": {
+    "celebrationTitleLine1": "Hoy es",
+    "celebrationTitleLine2": "Record Store Day",
+    "celebrationBodyLine1": "Visita ahora tu tienda de discos local.",
+    "celebrationBodyLine2": "Un lanzamiento especial te está esperando.",
+    "untilNextRsd": "Hasta el próximo Record Store Day",
+    "daysRemaining": {
+      "one": "Falta {count} día",
+      "other": "Faltan {count} días"
+    },
+    "nextDateLabel": "Próxima fecha: {date}"
+  },
+  "countdown": {
+    "days": "DÍAS",
+    "hours": "HORAS",
+    "mins": "MIN",
+    "secs": "SEG",
+    "ariaLabel": "Cuenta regresiva para Record Store Day"
+  },
+  "metadata": {
+    "title": "Cuenta regresiva de Record Store Day",
+    "description": "¿Cuántos días faltan para Record Store Day? Sitio de cuenta regresiva para amantes del vinilo y la música.",
+    "ogDescription": "Consulta los días restantes para Record Store Day.",
+    "twitterDescription": "¿Cuántos días faltan para Record Store Day? Consulta la cuenta regresiva ahora.",
+    "ogSubtitle": "¿Cuántos días faltan para Record Store Day?",
+    "ogFooterRight": "Vinilo / Música / Cuenta regresiva"
+  }
+}

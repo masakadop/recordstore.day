@@ -1,0 +1,35 @@
+{
+  "common": {
+    "loading": "載入中...",
+    "siteWordmark": "recordstore.day",
+    "supportLocalStore": "支持你在地的唱片行",
+    "separatorMusic": "音樂分隔符"
+  },
+  "home": {
+    "celebrationTitleLine1": "今天是",
+    "celebrationTitleLine2": "Record Store Day",
+    "celebrationBodyLine1": "現在就去你附近的唱片行。",
+    "celebrationBodyLine2": "有一張特別的唱片正在等你。",
+    "untilNextRsd": "距離下一個 Record Store Day",
+    "daysRemaining": {
+      "one": "還有 {count} 天",
+      "other": "還有 {count} 天"
+    },
+    "nextDateLabel": "下一次日期：{date}"
+  },
+  "countdown": {
+    "days": "天",
+    "hours": "時",
+    "mins": "分",
+    "secs": "秒",
+    "ariaLabel": "Record Store Day 倒數"
+  },
+  "metadata": {
+    "title": "Record Store Day 倒數",
+    "description": "距離 Record Store Day 還有幾天？為黑膠與音樂愛好者打造的倒數網站。",
+    "ogDescription": "查看距離 Record Store Day 的剩餘天數。",
+    "twitterDescription": "距離 Record Store Day 還有幾天？立即查看倒數。",
+    "ogSubtitle": "距離 Record Store Day 還有幾天？",
+    "ogFooterRight": "黑膠 / 音樂 / 倒數"
+  }
+}
