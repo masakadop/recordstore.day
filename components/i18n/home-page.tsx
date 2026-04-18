@@ -24,10 +24,17 @@ export function HomePage({ locale, messages }: HomePageProps) {
   const [daysLeft, setDaysLeft] = useState(0)
 
   useEffect(() => {
+    const dayOffsetRaw = new URLSearchParams(window.location.search).get("get")
+    const parsedOffset = dayOffsetRaw ? Number.parseInt(dayOffsetRaw, 10) : 0
+    const dayOffset = Number.isFinite(parsedOffset) ? parsedOffset : 0
+
+    const baseDate = new Date()
+    baseDate.setDate(baseDate.getDate() + dayOffset)
+
     setMounted(true)
-    setIsToday(isRecordStoreDay())
-    setNextRSD(getNextRecordStoreDay())
-    setDaysLeft(getDaysUntilRecordStoreDay())
+    setIsToday(isRecordStoreDay(baseDate))
+    setNextRSD(getNextRecordStoreDay(baseDate))
+    setDaysLeft(getDaysUntilRecordStoreDay(baseDate))
   }, [])
 
   if (!mounted) {
