@@ -1,0 +1,35 @@
+{
+  "common": {
+    "loading": "Laden...",
+    "siteWordmark": "recordstore.day",
+    "supportLocalStore": "Steun je lokale platenzaak",
+    "separatorMusic": "Muziekscheiding"
+  },
+  "home": {
+    "celebrationTitleLine1": "Vandaag is het",
+    "celebrationTitleLine2": "Record Store Day",
+    "celebrationBodyLine1": "Ga nu naar je lokale platenzaak.",
+    "celebrationBodyLine2": "Er wacht een speciale plaat op je.",
+    "untilNextRsd": "Tot de volgende Record Store Day",
+    "daysRemaining": {
+      "one": "Nog {count} dag",
+      "other": "Nog {count} dagen"
+    },
+    "nextDateLabel": "Volgende datum: {date}"
+  },
+  "countdown": {
+    "days": "DAGEN",
+    "hours": "UREN",
+    "mins": "MIN",
+    "secs": "SEC",
+    "ariaLabel": "Aftellen naar Record Store Day"
+  },
+  "metadata": {
+    "title": "Record Store Day aftellen",
+    "description": "Hoeveel dagen tot Record Store Day? Een aftelsite voor vinyl- en muziekliefhebbers.",
+    "ogDescription": "Bekijk de resterende dagen tot Record Store Day.",
+    "twitterDescription": "Hoeveel dagen tot Record Store Day? Bekijk nu het aftellen.",
+    "ogSubtitle": "Hoeveel dagen tot Record Store Day?",
+    "ogFooterRight": "Vinyl / Muziek / Aftellen"
+  }
+}

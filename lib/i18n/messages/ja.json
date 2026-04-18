@@ -1,0 +1,35 @@
+{
+  "common": {
+    "loading": "読み込み中...",
+    "siteWordmark": "recordstore.day",
+    "supportLocalStore": "お近くのレコードショップを応援しよう",
+    "separatorMusic": "音符の区切り"
+  },
+  "home": {
+    "celebrationTitleLine1": "本日は",
+    "celebrationTitleLine2": "レコードストアデイ",
+    "celebrationBodyLine1": "今すぐお近くのレコードショップへ。",
+    "celebrationBodyLine2": "特別な一枚があなたを待っています。",
+    "untilNextRsd": "次回のレコードストアデイまで",
+    "daysRemaining": {
+      "one": "あと {count} 日",
+      "other": "あと {count} 日"
+    },
+    "nextDateLabel": "次回開催日: {date}"
+  },
+  "countdown": {
+    "days": "日",
+    "hours": "時間",
+    "mins": "分",
+    "secs": "秒",
+    "ariaLabel": "レコードストアデイまでのカウントダウン"
+  },
+  "metadata": {
+    "title": "Record Store Day Countdown",
+    "description": "Record Store Day（レコードストアデイ）まであと何日？開催日までのカウントダウンを表示する、アナログレコードと音楽ファンのためのサイトです。",
+    "ogDescription": "Record Store Day（レコードストアデイ）開催日までの残り日数をチェックできるカウントダウンサイト。",
+    "twitterDescription": "Record Store Day（レコードストアデイ）まであと何日？開催日までのカウントダウンを今すぐチェック。",
+    "ogSubtitle": "Record Store Day（レコードストアデイ）まであと何日？",
+    "ogFooterRight": "レコード / 音楽 / カウントダウン"
+  }
+}

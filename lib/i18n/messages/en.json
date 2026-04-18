@@ -1,0 +1,35 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "siteWordmark": "recordstore.day",
+    "supportLocalStore": "Support your local record store",
+    "separatorMusic": "Music separator"
+  },
+  "home": {
+    "celebrationTitleLine1": "Today is",
+    "celebrationTitleLine2": "Record Store Day",
+    "celebrationBodyLine1": "Head to your local record shop now.",
+    "celebrationBodyLine2": "A special record is waiting for you.",
+    "untilNextRsd": "Until the next Record Store Day",
+    "daysRemaining": {
+      "one": "{count} day",
+      "other": "{count} days"
+    },
+    "nextDateLabel": "Next Record Store Day: {date}"
+  },
+  "countdown": {
+    "days": "DAYS",
+    "hours": "HOURS",
+    "mins": "MINS",
+    "secs": "SECS",
+    "ariaLabel": "Countdown to Record Store Day"
+  },
+  "metadata": {
+    "title": "Record Store Day Countdown",
+    "description": "How many days until Record Store Day? A countdown site for vinyl lovers and music fans.",
+    "ogDescription": "Check the remaining days until Record Store Day.",
+    "twitterDescription": "How many days until Record Store Day? Check the countdown now.",
+    "ogSubtitle": "How many days until Record Store Day?",
+    "ogFooterRight": "Vinyl / Music / Countdown"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "common": {
+    "loading": "Wird geladen...",
+    "siteWordmark": "recordstore.day",
+    "supportLocalStore": "Unterstütze deinen lokalen Plattenladen",
+    "separatorMusic": "Musikalischer Trenner"
+  },
+  "home": {
+    "celebrationTitleLine1": "Heute ist",
+    "celebrationTitleLine2": "Record Store Day",
+    "celebrationBodyLine1": "Geh jetzt in deinen lokalen Plattenladen.",
+    "celebrationBodyLine2": "Eine besondere Platte wartet auf dich.",
+    "untilNextRsd": "Bis zum nächsten Record Store Day",
+    "daysRemaining": {
+      "one": "Noch {count} Tag",
+      "other": "Noch {count} Tage"
+    },
+    "nextDateLabel": "Nächstes Datum: {date}"
+  },
+  "countdown": {
+    "days": "TAGE",
+    "hours": "STD",
+    "mins": "MIN",
+    "secs": "SEK",
+    "ariaLabel": "Countdown bis zum Record Store Day"
+  },
+  "metadata": {
+    "title": "Record Store Day Countdown",
+    "description": "Wie viele Tage bis zum Record Store Day? Countdown-Seite für Vinyl- und Musikfans.",
+    "ogDescription": "Prüfe die verbleibenden Tage bis zum Record Store Day.",
+    "twitterDescription": "Wie viele Tage bis zum Record Store Day? Prüfe jetzt den Countdown.",
+    "ogSubtitle": "Wie viele Tage bis zum Record Store Day?",
+    "ogFooterRight": "Vinyl / Musik / Countdown"
+  }
+}
