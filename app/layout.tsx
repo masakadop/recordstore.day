@@ -54,10 +54,10 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/apple-icon.png',
-        width: 180,
-        height: 180,
-        alt: 'Record Store Day Countdown',
+        url: '/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Record Store Day Countdown'
       },
     ],
   },
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     title: 'Record Store Day Countdown',
     description:
       'Record Store Day（レコードストアデイ）まであと何日？開催日までのカウントダウンを今すぐチェック。',
-    images: ['/apple-icon.png'],
+    images: ['/twitter-image.png'],
   },
   icons: {
     icon: [
