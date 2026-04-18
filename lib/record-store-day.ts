@@ -15,8 +15,8 @@ export function getThirdSaturdayOfApril(year: number): Date {
   return new Date(year, 3, thirdSaturday)
 }
 
-export function getNextRecordStoreDay(): Date {
-  const now = new Date()
+export function getNextRecordStoreDay(baseDate: Date = new Date()): Date {
+  const now = new Date(baseDate)
   const currentYear = now.getFullYear()
 
   const thisYearRSD = getThirdSaturdayOfApril(currentYear)
@@ -31,16 +31,16 @@ export function getNextRecordStoreDay(): Date {
   return getThirdSaturdayOfApril(currentYear + 1)
 }
 
-export function isRecordStoreDay(): boolean {
-  const now = new Date()
-  const rsd = getNextRecordStoreDay()
+export function isRecordStoreDay(baseDate: Date = new Date()): boolean {
+  const now = new Date(baseDate)
+  const rsd = getNextRecordStoreDay(now)
 
   return now.getFullYear() === rsd.getFullYear() && now.getMonth() === rsd.getMonth() && now.getDate() === rsd.getDate()
 }
 
-export function getDaysUntilRecordStoreDay(): number {
-  const now = new Date()
-  const rsd = getNextRecordStoreDay()
+export function getDaysUntilRecordStoreDay(baseDate: Date = new Date()): number {
+  const now = new Date(baseDate)
+  const rsd = getNextRecordStoreDay(now)
 
   const nowMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate())
   const rsdMidnight = new Date(rsd.getFullYear(), rsd.getMonth(), rsd.getDate())
