@@ -35,18 +35,15 @@ export default function OpenGraphImage() {
             opacity: 0.95,
           }}
         >
-          <span style={{ fontSize: 44 }}>🎵</span>
           Record Store Day
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
           <div style={{ fontSize: 82, fontWeight: 800, lineHeight: 1.05 }}>
-            Record Store Day
-            <br />
-            Countdown
+            Record Store Day Countdown
           </div>
           <div style={{ fontSize: 32, opacity: 0.9 }}>
-            レコードストアデイ開催日まで、あと何日？
+            How many days until Record Store Day?
           </div>
         </div>
 
@@ -60,7 +57,7 @@ export default function OpenGraphImage() {
           }}
         >
           <span>recordstore.day</span>
-          <span style={{ fontSize: 34 }}>Vinyl • Music • Countdown</span>
+          <span style={{ fontSize: 34 }}>Vinyl / Music / Countdown</span>
         </div>
       </div>
     ),
